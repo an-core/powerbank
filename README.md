@@ -55,8 +55,8 @@
 - Загрузка / скачивание / удаление
 
 ### 🖥 Дисплеи
-- **LCD1602** (I2C) — на всех платформах
-- **ST7789** (SPI) — только на ESP32 / ESP32-S3
+- **LCD1602** (I2C) - на всех платформах
+- **ST7789** (SPI) - только на ESP32 / ESP32-S3
 - Автоматическая ротация страниц с IP, зарядом, временем
 
 ---
@@ -67,16 +67,16 @@
 
 | Платформа | Статус | Примечания |
 |---|---|---|
-| **ESP8266** (Wemos D1 mini) | ✅ | Базовая конфигурация |
-| **ESP32** | ✅ | + ST7789, больше RAM |
-| **ESP32-S3** | ✅ | + PSRAM, USB-CDC |
+| **ESP8266** (Wemos D1 mini) | ✔️ | Базовая конфигурация |
+| **ESP32** | ✔️ | + ST7789, больше RAM |
+| **ESP32-S3** | ✔️ | + PSRAM, USB-CDC |
 
 ### Компоненты
 
 | Компонент | Обязателен | Назначение |
 |---|---|---|
-| ESP8266 / ESP32 | ✅ | Микроконтроллер |
-| INA219 | ✅ | Датчик тока/напряжения (I2C, адрес `0x40`) |
+| ESP8266 / ESP32 | ✔️ | Микроконтроллер |
+| INA219 | ✔️ | Датчик тока/напряжения (I2C, адрес `0x40`) |
 | LCD1602 + PCF8574 | ⚙️ | Дисплей 16×2 (I2C, адрес `0x27` или `0x3F`) |
 | ST7789 | ⚙️ | Цветной TFT (только ESP32) |
 | Кнопка | ⚙️ | Ручное управление |
@@ -89,31 +89,31 @@
 ### ESP8266 (Wemos D1 mini)
 
 INA219 (I2C): LCD1602 (I2C):
-VCC → 3.3V VCC → 5V (или 3.3V)
-GND → GND GND → GND
-SDA → D2 (GPIO4) SDA → D2 (GPIO4)
-SCL → D1 (GPIO5) SCL → D1 (GPIO5)
+VCC - 3.3V VCC - 5V (или 3.3V)
+GND - GND GND - GND
+SDA - D2 (GPIO4) SDA - D2 (GPIO4)
+SCL - D1 (GPIO5) SCL - D1 (GPIO5)
 
 ### ESP32
 
 INA219 + LCD1602 (общая I2C-шина):
-VCC → 3.3V
-GND → GND
-SDA → GPIO21
-SCL → GPIO22
+VCC - 3.3V
+GND - GND
+SDA - GPIO21
+SCL - GPIO22
 
 ST7789 (SPI):
-BLK → GPIO27 (подсветка, PWM)
-CS → GPIO15
-DC → GPIO2
-RST → GPIO4
-SDA → GPIO23 (MOSI)
-SCL → GPIO18 (SCK)
-VCC → 3.3V
-GND → GND
+BLK - GPIO27 (подсветка, PWM)
+CS - GPIO15
+DC - GPIO2
+RST - GPIO4
+SDA - GPIO23 (MOSI)
+SCL - GPIO18 (SCK)
+VCC - 3.3V
+GND - GND
 
 
 ### ESP32-S3
 
-I2C: SDA → GPIO8, SCL → GPIO9
-SPI: BLK → GPIO4
+I2C: SDA - GPIO8, SCL - GPIO9
+SPI: BLK - GPIO4
