@@ -87,3 +87,33 @@
 ## 🔌 Схема подключения
 
 ### ESP8266 (Wemos D1 mini)
+
+INA219 (I2C): LCD1602 (I2C):
+VCC → 3.3V VCC → 5V (или 3.3V)
+GND → GND GND → GND
+SDA → D2 (GPIO4) SDA → D2 (GPIO4)
+SCL → D1 (GPIO5) SCL → D1 (GPIO5)
+
+### ESP32
+
+INA219 + LCD1602 (общая I2C-шина):
+VCC → 3.3V
+GND → GND
+SDA → GPIO21
+SCL → GPIO22
+
+ST7789 (SPI):
+BLK → GPIO27 (подсветка, PWM)
+CS → GPIO15
+DC → GPIO2
+RST → GPIO4
+SDA → GPIO23 (MOSI)
+SCL → GPIO18 (SCK)
+VCC → 3.3V
+GND → GND
+
+
+### ESP32-S3
+
+I2C: SDA → GPIO8, SCL → GPIO9
+SPI: BLK → GPIO4
